@@ -53,6 +53,9 @@ const config = {
 					foreground: "hsl(var(--card-foreground))",
 				},
 			},
+      backgroundImage: {
+        'pokemon-red': "url('/bg-red.svg')",
+      },
 			borderRadius: {
 				lg: "var(--radius)",
 				md: "calc(var(--radius) - 2px)",
@@ -67,10 +70,15 @@ const config = {
 					from: { height: "var(--radix-accordion-content-height)" },
 					to: { height: "0" },
 				},
+        "spring": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(4%)" },
+        },
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
+        "spring": "spring 4s ease-in-out infinite",
 			},
 		},
 	},

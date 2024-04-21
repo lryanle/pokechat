@@ -45,10 +45,10 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 type NavbarProps = {
-	PokémonID: number;
+	pokemonID: number;
 };
 
-export const Navbar = ({ PokémonID }: NavbarProps) => {
+export const Navbar = ({ pokemonID }: NavbarProps) => {
 	// return (
 	// 	<div className="sticky">
 	// 		<Link href="/">Home</Link>
@@ -101,13 +101,13 @@ export const Navbar = ({ PokémonID }: NavbarProps) => {
 									</Link>
 								</NavigationMenuLink>
 							</li>
-							<ListItem href="/docs" badge="New" title="Hybrid Talk" sparkle>
+							<ListItem href="/companion?mode=hybrid" badge="New" title="Hybrid Talk" sparkle>
 								Talk to or message your smart companion interchangably.
 							</ListItem>
-							<ListItem href="/docs/installation" title="Chat" sparkle>
+							<ListItem href="/companion?mode=chat" title="Chat" sparkle>
 								Chat to your smart companion through text prompts.
 							</ListItem>
-							<ListItem href="/docs/primitives/typography" title="Voice" sparkle>
+							<ListItem href="/companion?mode=voice" title="Voice" sparkle>
 								Verbally communicate with your smart companion through voice.
 							</ListItem>
 						</ul>
