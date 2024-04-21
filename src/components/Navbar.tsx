@@ -67,7 +67,7 @@ export const Navbar = ({ pokemonID }: NavbarProps) => {
 	return (
 		<NavigationMenu>
 			<NavigationMenuList className="gap-2">
-				<NavigationMenuItem>
+				<NavigationMenuItem className="bg-white hover:bg-opacity-70 hover:drop-shadow rounded-md">
 					<NavigationMenuTrigger className="gap-1">
 						<Sparkles size={20} strokeWidth={2} />
 						<p>Smart Companion</p>
@@ -80,10 +80,6 @@ export const Navbar = ({ pokemonID }: NavbarProps) => {
 										className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
 										href="/"
 									>
-										{/* <div className="my-2 flex flex-row items-center justify-start gap-1.5 text-lg font-medium">
-											<Icons.Pokéball className="h-5 w-5" />
-											<p className="leading-none">Pokéchat</p>
-										</div> */}
 										<Icons.pokeball className="h-6 w-6" />
 										<div className="mb-2 mt-4 text-lg font-medium">
 											Pokéchat
@@ -101,7 +97,7 @@ export const Navbar = ({ pokemonID }: NavbarProps) => {
 									</Link>
 								</NavigationMenuLink>
 							</li>
-							<ListItem href="/companion?mode=hybrid" badge="New" title="Hybrid Talk" sparkle>
+							<ListItem href="/companion?mode=hybrid" badge="Experimental" title="Hybrid Talk" sparkle>
 								Talk to or message your smart companion interchangably.
 							</ListItem>
 							<ListItem href="/companion?mode=chat" title="Chat" sparkle>
@@ -113,7 +109,7 @@ export const Navbar = ({ pokemonID }: NavbarProps) => {
 						</ul>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
-				<NavigationMenuItem>
+				<NavigationMenuItem className="bg-white hover:bg-opacity-70 hover:drop-shadow rounded-md">
 					<NavigationMenuTrigger className="gap-1">
 						<Book size={20} strokeWidth={2} />
 						<p>Pokédex</p>
@@ -132,7 +128,7 @@ export const Navbar = ({ pokemonID }: NavbarProps) => {
 						</ul>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
-				<NavigationMenuItem>
+				<NavigationMenuItem className="bg-white hover:bg-opacity-70 hover:drop-shadow rounded-md">
 					<NavigationMenuLink
 						href="https://github.com/lryanle/Pokéchat"
 						target="_blank"

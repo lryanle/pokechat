@@ -13,7 +13,7 @@ export default function Home() {
 					<h2 className="max-w-[72rem] text-center text-lg sm:text-xl">
 						The helpful poké-companion nobody asked for but always needed
 					</h2>
-					<div className="flex flex-col items-center justify-center animate-spring">
+					<div className="flex flex-col items-center justify-center animate-spring p-1">
 						<Image
 							src="/lighting.svg"
 							alt="lighting"
