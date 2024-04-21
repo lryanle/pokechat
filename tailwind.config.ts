@@ -55,6 +55,7 @@ const config = {
 			},
       backgroundImage: {
         'pokemon-red': "url('/bg-red.svg')",
+				'crosshatch': "url('/cross-pattern.png')",
       },
 			borderRadius: {
 				lg: "var(--radius)",

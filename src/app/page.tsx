@@ -1,4 +1,6 @@
 import Image from "next/image";
+import CompanionCardFlush from "@/components/CompanionCardFlush";
+import DexCardsWrapper from "@/components/DexCardsWrapper";
 
 export default function Home() {
 	return (
@@ -33,19 +35,12 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full h-[45rem] text-white bg-[#EFF3F6]">{/* about */}</div>
-			{/* <Segment raised stacked color='red'>
-        <Header as="h1">Welcome to the Pokeverse!</Header>
-        <Header as="h1"></Header>
-        <Link to="/card">
-          <Button primary animated>
-            <Button.Content visible>Let's GO!</Button.Content>
-            <Button.Content hidden>
-              <Icon name='arrow right' />
-            </Button.Content>
-          </Button>
-        </Link>
-      </Segment> */}
+			<div className="w-full flex justify-center items-center text-white bg-[#EFF3F6]">
+        <CompanionCardFlush />
+      </div>
+			<div className="w-full flex justify-center items-center text-white bg-[#fff]">
+        <DexCardsWrapper />
+      </div>
 		</div>
 	);
 }
