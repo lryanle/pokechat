@@ -5,9 +5,10 @@ type Props = {}
 
 export default function DexCardsWrapper({}: Props) {
   return (
-    <div className="w-full max-w-[72rem] py-10">
+    <div className="w-full max-w-[72rem] py-12">
       <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="text-4xl font-bold text-foreground mb-4">Pokédex Features</h1>
+        <h1 className="text-4xl font-bold text-foreground mb-1">Pokédex Features</h1>
+        <h2 className="text-foreground mb-4">Enjoy Pokéchat's Pokédex features to assist you in your Pokémon journey. Lookup Pokémon, items, locations, and games to learn more about the Pokémon universe. If you're a Pokémon fan, you'll love the information and resources available to you.</h2>
         <div className="w-full flex flex-row justify-evenly items-center flex-wrap gap-8">
           <DexCard title={'Pokemon Encyclopedia'} description={'Search for Pokémon and view their stats, abilities, and evolutions.'} cta={'Lookup Pokémon'} className="from-[#ccf997bf] to-[#ccf9eabf]" />
           <DexCard title={'Item Inventory'} description={'Search for items and view their effects and locations.'} cta={'Lookup Items'} className="from-[#a3eff9bf] to-[#98ccffbf]" />
