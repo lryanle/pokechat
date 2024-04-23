@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function capitalize(input: string) {
-  return input
+  return String(input)
     .split("-")
     .map((word) => {
       switch (word.toLowerCase()) { // replace "m" with "♂" and "f" with "♀"
@@ -49,7 +49,7 @@ export function pokeTypeToImg(type: string) {
 }
 
 export function pokeTypeToTW(type: string) {
-  switch (type.toLowerCase()) {
+  switch (String(type).toLowerCase()) {
     case "bug":
       return "pokemon-bug"
     case "dark":

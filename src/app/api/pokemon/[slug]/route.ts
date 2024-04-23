@@ -186,7 +186,7 @@ async function getPokeList(slug: string) {
 		const initialDamageFrom: Record<string, number> = {};
 		const initialDamageTo: Record<string, number> = {};
 
-		const typeEffectiveness = typeEffectivenessRelations.reduce(
+		const typeEffectivenessPre = typeEffectivenessRelations.reduce(
 			(acc, relation) => {
 				const mapDamageTypes = (
 					types: { name: string }[],
@@ -217,24 +217,50 @@ async function getPokeList(slug: string) {
 			{ damageFrom: initialDamageFrom, damageTo: initialDamageTo }
 		);
 
-		const cleanEffectiveness = {
+		const typeEffectiveness = {
 			damageFrom: Object.fromEntries(
-				Object.entries(typeEffectiveness.damageFrom).filter(
+				Object.entries(typeEffectivenessPre.damageFrom).filter(
 					([_, multiplier]) => multiplier !== 1
 				)
 			),
 			damageTo: Object.fromEntries(
-				Object.entries(typeEffectiveness.damageTo).filter(
+				Object.entries(typeEffectivenessPre.damageTo).filter(
 					([_, multiplier]) => multiplier !== 1
 				)
 			),
 		};
 
+		const pokemonBeforeAfterFn = (id: number) => {
+			const before = id - 1;
+			const after = id + 1;
+
+			const fetchPokemon = async (id: number) => {
+				try {
+					const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+					if (!response.ok) {
+						return {};
+					}
+					const data = await response.json();
+					return {
+						id: data.id,
+						name: data.name,
+						image: data.sprites.other["official-artwork"].front_default,
+					};
+				} catch (error) {
+					return {};
+				}
+			};
+			return Promise.all([fetchPokemon(before), fetchPokemon(after)]);
+		};
+
+		const pokemonBeforeAfter = await pokemonBeforeAfterFn(pokemon.id);
+
 		const finalData = {
 			pokemon,
 			species,
 			evolutionChain,
-			cleanEffectiveness,
+			typeEffectiveness,
+			pokemonBeforeAfter,
 		};
 
 		return finalData;
