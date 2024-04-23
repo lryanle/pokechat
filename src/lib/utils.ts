@@ -23,6 +23,12 @@ export function capitalize(input: string) {
     .join(" ")
 }
 
+export function pad(num: number, size: number) {
+  let s = num + "";
+  while (s.length < size) s = "0" + s;
+  return s;
+}
+
 export function pokeTypeToImg(type: string) {
   if (!["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"].includes(type.toLowerCase())) {
     return ""

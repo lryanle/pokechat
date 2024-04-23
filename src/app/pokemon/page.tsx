@@ -88,12 +88,12 @@ export default function PokemonList({}: Props) {
 	return (
 		<div className="flex flex-col items-center bg-white">
 			<div
-				className="bg-[#c30000] w-full flex items-center pt-20 justify-center"
+				className="bg-[#c30000] w-full flex items-center pt-16 justify-center"
 			>
-				<div className="max-w-[72rem] w-full px-6 py-20">
+				<div className="max-w-[72rem] w-full px-6 py-4">
 					<h1 className="text-5xl font-bold text-center text-secondary flex items-center justify-center gap-2">
 						<Book className="h-10 w-10" strokeWidth={2.5} />
-						<span>Pokemon</span>
+						<span>Pokémon</span>
 					</h1>
 				</div>
 			</div>
@@ -167,7 +167,7 @@ export default function PokemonList({}: Props) {
 							<div className={cn("text-foreground font-semibold w-full py-4 flex justify-start items-center gap-1", noResults ? "pb-80" : "")}>
 								<Icons.pokeball className="h-6 w-6 text-[#c30000]" />
 								<span className="opacity-75">
-									{filteredPokemon.length} Pokémons Found
+									{filteredPokemon.length} Pokémon Found
 								</span>
 							</div>
 							{filteredPokemon.map(
@@ -190,7 +190,7 @@ export default function PokemonList({}: Props) {
 				</div>
 			</div>
 			<div className="h-0 w-0 hidden bg-pokemon-bug bg-pokemon-dark bg-pokemon-dragon bg-pokemon-electric bg-pokemon-fairy bg-pokemon-fighting bg-pokemon-fire bg-pokemon-flying bg-pokemon-ghost bg-pokemon-grass bg-pokemon-ground bg-pokemon-ice bg-pokemon-normal bg-pokemon-poison bg-pokemon-psychic bg-pokemon-rock bg-pokemon-steel bg-pokemon-water"></div>
-			<div className="h-0 w-0 hidden hover:shadow-pokemon-bug hover:shadow-pokemon-dark hover:shadow-pokemon-dragon hover:shadow-pokemon-electric hover:shadow-pokemon-fairy hover:shadow-pokemon-fighting hover:shadow-pokemon-fire hover:shadow-pokemon-flying hover:shadow-pokemon-ghost hover:shadow-pokemon-grass hover:shadow-pokemon-ground hover:shadow-pokemon-ice hover:shadow-pokemon-normal hover:shadow-pokemon-poison hover:shadow-pokemon-psychic hover:shadow-pokemon-rock hover:shadow-pokemon-steel hover:shadow-pokemon-water"></div>
+			<div className="h-0 w-0 hidden hover:drop-shadow-pokemon-bug hover:drop-shadow-pokemon-dark hover:drop-shadow-pokemon-dragon hover:drop-shadow-pokemon-electric hover:drop-shadow-pokemon-fairy hover:drop-shadow-pokemon-fighting hover:drop-shadow-pokemon-fire hover:drop-shadow-pokemon-flying hover:drop-shadow-pokemon-ghost hover:drop-shadow-pokemon-grass hover:drop-shadow-pokemon-ground hover:drop-shadow-pokemon-ice hover:drop-shadow-pokemon-normal hover:drop-shadow-pokemon-poison hover:drop-shadow-pokemon-psychic hover:drop-shadow-pokemon-rock hover:drop-shadow-pokemon-steel hover:drop-shadow-pokemon-water"></div>
 			<div className="h-0 w-0 hidden data-[state=on]:bg-pokemon-bug data-[state=on]:bg-opacity-20"></div>
 			<div className="h-0 w-0 hidden data-[state=on]:bg-pokemon-dark data-[state=on]:bg-opacity-20"></div>
 			<div className="h-0 w-0 hidden data-[state=on]:bg-pokemon-dragon data-[state=on]:bg-opacity-20"></div>

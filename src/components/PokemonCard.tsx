@@ -19,7 +19,7 @@ export const PokemonCard = React.memo(({ pokemon, index }: Props) => {
 			onClick={() => router.push(`/pokemon/${pokemon.id}`)}
 			key={index}
 			className={cn(
-				`w-40 flex flex-col self-stretch drop-shadow hover:-translate-y-2 hover:drop-shadow-lg hover:shadow-md hover:shadow-${pokeTypeToTW(
+				`w-40 flex flex-col self-stretch drop-shadow-md hover:-translate-y-2 hover:drop-shadow-${pokeTypeToTW(
 					pokemon.types[0].typeName
 				)} cursor-pointer transition-all ease-in-out duration-200`
 			)}
