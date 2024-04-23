@@ -31,44 +31,44 @@ export function pokeTypeToImg(type: string) {
   return `/icons/${type.toLowerCase()}.png`
 }
 
-export function pokeTypeToHex(type: string) {
+export function pokeTypeToTW(type: string) {
   switch (type.toLowerCase()) {
     case "bug":
-      return "bg-pokemon-bug"
+      return "pokemon-bug"
     case "dark":
-      return "bg-pokemon-dark"
+      return "pokemon-dark"
     case "dragon":
-      return "bg-pokemon-dragon"
+      return "pokemon-dragon"
     case "electric":
-      return "bg-pokemon-electric"
+      return "pokemon-electric"
     case "fairy":
-      return "bg-pokemon-fairy"
+      return "pokemon-fairy"
     case "fighting":
-      return "bg-pokemon-fighting"
+      return "pokemon-fighting"
     case "fire":
-      return "bg-pokemon-fire"
+      return "pokemon-fire"
     case "flying":
-      return "bg-pokemon-flying"
+      return "pokemon-flying"
     case "ghost":
-      return "bg-pokemon-ghost"
+      return "pokemon-ghost"
     case "grass":
-      return "bg-pokemon-grass"
+      return "pokemon-grass"
     case "ground":
-      return "bg-pokemon-ground"
+      return "pokemon-ground"
     case "ice":
-      return "bg-pokemon-ice"
+      return "pokemon-ice"
     case "normal":
-      return "bg-pokemon-normal"
+      return "pokemon-normal"
     case "poison":
-      return "bg-pokemon-poison"
+      return "pokemon-poison"
     case "psychic":
-      return "bg-pokemon-psychic"
+      return "pokemon-psychic"
     case "rock":
-      return "bg-pokemon-rock"
+      return "pokemon-rock"
     case "steel":
-      return "bg-pokemon-steel"
+      return "pokemon-steel"
     case "water":
-      return "bg-pokemon-water"
+      return "pokemon-water"
     default:
       return ""
   }
