@@ -169,10 +169,15 @@ export default function page({ params }: Props) {
 							</TabsTrigger>
 						</TabsList>
 						<TabsContent value="about" className="h-full w-full">
-							{/* abilities */}
+              {/* abilities */}
+              {/* Training: EV Yield, catch rate, base friendship, base exp, growth rate, held items, weight, height */}
+              {/* Breeding: egg groups, egg cycles, gender distribution */}
+              {/* Typing */}
+              {/* Stats */}
 						</TabsContent>
 						<TabsContent value="moves" className="h-full w-full">
-							Change your password here.
+							{/* Game Versions -> Level Up, TH/HM, Egg, Tutor */}
+              {/* Moves */}
 						</TabsContent>
 					</Tabs>
 				</div>

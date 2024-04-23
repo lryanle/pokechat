@@ -23,6 +23,17 @@ export function capitalize(input: string) {
     .join(" ")
 }
 
+export function titleCase(input: string) {
+  return input
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+export function underscore(input: string) {
+  return input.replace(/\s/g, "_");
+}
+
 export function pad(num: number, size: number) {
   let s = num + "";
   while (s.length < size) s = "0" + s;
