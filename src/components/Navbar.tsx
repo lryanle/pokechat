@@ -22,8 +22,7 @@ const components: { title: string; href: string; description: string }[] = [
 	{
 		title: "Pokémon",
 		href: "/pokemon",
-		description:
-			"View information about Pokémon, including their evolution and moves.",
+		description: "View information about Pokémon, including their evolution and moves.",
 	},
 	{
 		title: "Items",
@@ -33,14 +32,12 @@ const components: { title: string; href: string; description: string }[] = [
 	{
 		title: "Locations",
 		href: "/locations",
-		description:
-			"View different locations, regions, and the Pokémon that can be found there.",
+		description: "View different locations, regions, and the Pokémon that can be found there.",
 	},
 	{
 		title: "Games",
 		href: "/games",
-		description:
-			"Learn about the different Pokémon games and their generations.",
+		description: "Learn about the different Pokémon games and their generations.",
 	},
 ];
 
@@ -97,7 +94,13 @@ export const Navbar = ({ pokemonID }: NavbarProps) => {
 									</Link>
 								</NavigationMenuLink>
 							</li>
-							<ListItem href="/companion?mode=hybrid" badge="Experimental" title="Hybrid Talk" sparkle>
+							<ListItem
+								href="/companion?mode=hybrid"
+								badge="Experimental"
+								badgeColor="purple-500"
+								title="Hybrid Talk"
+								sparkle
+							>
 								Talk to or message your smart companion interchangably.
 							</ListItem>
 							<ListItem href="/companion?mode=chat" title="Chat" sparkle>
@@ -121,6 +124,8 @@ export const Navbar = ({ pokemonID }: NavbarProps) => {
 									key={component.title}
 									title={component.title}
 									href={component.href}
+									badge={component.href !== "/pokemon" ? "TODO" : undefined}
+									disabled={component.href !== "/pokemon" ? true : false}
 								>
 									{component.description}
 								</ListItem>
@@ -144,8 +149,13 @@ export const Navbar = ({ pokemonID }: NavbarProps) => {
 
 const ListItem = React.forwardRef<
 	React.ElementRef<"a">,
-	React.ComponentPropsWithoutRef<"a"> & { badge?: string; sparkle?: boolean }
->(({ className, title, children, badge, sparkle, ...props }, ref) => {
+	React.ComponentPropsWithoutRef<"a"> & {
+		badge?: string;
+		badgeColor?: string;
+		sparkle?: boolean;
+		disabled?: boolean;
+	}
+>(({ className, title, children, badge, badgeColor, disabled, sparkle, ...props }, ref) => {
 	return (
 		<li>
 			<NavigationMenuLink asChild>
@@ -153,8 +163,14 @@ const ListItem = React.forwardRef<
 					ref={ref}
 					className={cn(
 						"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground align-middle",
-						className
+						className,
+						disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
 					)}
+					onClick={(e) => {
+						if (disabled) {
+							e.preventDefault();
+						}
+					}}
 					{...props}
 				>
 					<div className="font-medium leading-none inline-flex rounded-md bg-zinc-100 px-[6px] py-[3px]">
@@ -170,13 +186,19 @@ const ListItem = React.forwardRef<
 						<span className="text-sm">{title}</span>
 					</div>
 					{badge && (
-						<span className="ml-1 rounded-md bg-[#c00] px-1.5 py-0.5 text-xs leading-none text-[#fff] no-underline group-hover:no-underline">
+						<span
+							className={cn(
+								"ml-1 rounded-md px-1.5 py-0.5 text-xs leading-none text-[#fff] no-underline group-hover:no-underline",
+								badgeColor ? `bg-${badgeColor}` : "bg-red-600"
+							)}
+						>
 							{badge}
 						</span>
 					)}
 					<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
 						{children}
 					</p>
+					<div className="w-0 h-0 hidden bg-purple-500"></div>
 				</a>
 			</NavigationMenuLink>
 		</li>
