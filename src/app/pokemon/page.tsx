@@ -4,9 +4,10 @@ import { PokemonCard } from "@/components/PokemonCard";
 import { Input } from "@/components/ui/input";
 import { Icons } from "@/components/Icons";
 import { capitalize, cn } from "@/lib/utils";
-import { Book } from "lucide-react";
+import { Book, X } from "lucide-react";
 import Image from "next/image";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Button } from "@/components/ui/button";
 
 function useDebounce(value: string, delay: number): string {
 	const [debouncedValue, setDebouncedValue] = useState(value);
@@ -134,6 +135,16 @@ export default function PokemonList({}: Props) {
 									<p>{capitalize(type)}</p>
 								</ToggleGroupItem>
 							))}
+							{selectedTypes.length > 0 && <Button
+									className="flex items-center justify-start gap-2 p-2 self-stretch text-base"
+									variant="destructive"
+									onClick={() => {setSelectedTypes([])}}
+								>
+									<div className="p-[3px] rounded-full bg-white">
+										<X className="text-destructive h-5 w-5" />
+									</div>
+									<p>Clear Filters</p>
+								</Button>}
 							{/* <p className="w-full text-center text-lg"> - □ - </p> */}
 						</ToggleGroup>
 					</div>
@@ -172,8 +183,8 @@ export default function PokemonList({}: Props) {
 						</>
 					)}
 					{!noResults && (
-						<div className="flex w-full h-full flex-1 justify-center items-center text-center py-10 text-2xl">
-							{"You're at the end!"}
+						<div className="flex w-full h-full flex-1 justify-center items-center text-center py-4 text-lg">
+							{"— You're at the end! —"}
 						</div>
 					)}
 				</div>
