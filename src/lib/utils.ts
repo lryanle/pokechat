@@ -90,3 +90,45 @@ export function pokeTypeToTW(type: string) {
       return ""
   }
 }
+
+export const blobToBase64 = (blob: any, callback: any) => {
+  const reader = new FileReader();
+  reader.onload = function () {
+    if (typeof reader.result === 'string') {
+      const base64data = reader?.result?.split(",")[1];
+      callback(base64data);
+    }
+  };
+  reader.readAsDataURL(blob);
+};
+
+const getPeakLevel = (analyzer: any) => {
+  const array = new Uint8Array(analyzer.fftSize);
+  analyzer.getByteTimeDomainData(array);
+
+  return (
+    array.reduce((max, current) => Math.max(max, Math.abs(current - 127)), 0) /
+    128
+  );
+};
+
+const createMediaStream = (stream: any, isRecording: any, callback: any) => {
+  const context = new AudioContext();
+  const source = context.createMediaStreamSource(stream);
+  const analyzer = context.createAnalyser();
+
+  source.connect(analyzer);
+
+  const tick = () => {
+    const peak = getPeakLevel(analyzer);
+
+    if (isRecording) {
+      callback(peak);
+      requestAnimationFrame(tick);
+    }
+  };
+
+  tick();
+};
+
+export { createMediaStream };
