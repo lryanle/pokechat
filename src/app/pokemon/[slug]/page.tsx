@@ -217,19 +217,6 @@ export default function page({ params }: Props) {
 											/>
 										</>
 									))}
-
-									{/* <SmallPokemonCard pokemon={pokemon} index={index} />
-									<div className="flex flex-col items-center justify-center text-center text-muted-foreground">
-										<MoveRight className="h-10 w-10" strokeWidth={2.5} />
-										<p className="text-sm -translate-y-2">{`lvl ${16}`}</p>
-									</div>
-									<SmallPokemonCard pokemon={pokemon} index={index} />
-
-									<div className="flex flex-col items-center justify-center text-center text-muted-foreground">
-										<MoveRight className="h-10 w-10" strokeWidth={2.5} />
-										<p className="text-sm -translate-y-2">{`lvl ${16}`}</p>
-									</div>
-									<SmallPokemonCard pokemon={pokemon} index={index} /> */}
 								</CardContent>
 							</Card>
 						</div>
