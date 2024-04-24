@@ -18,7 +18,7 @@ export const VoiceToText = ({text, setText}: any) => {
   }, [transcript]);
 
   return (
-    <div className="border p-1 m-1">
+    <div className="p-1 m-1">
       <Button onClick={startListening} className="flex justify-evenly items-center gap-2 text-lg w-32">
         <Sparkles/>
         <span>Chat</span>

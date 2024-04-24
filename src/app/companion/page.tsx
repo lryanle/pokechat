@@ -74,7 +74,7 @@ export default function page({ params }: Props) {
 				</div>
 			</div>
 			<div className="w-full h-full flex justify-center items-start max-w-[72rem] p-6">
-				<div className="absolute bottom-[10.5rem]">
+				<div className="fixed bottom-[2rem]">
 					<VoiceToText text={text} setText={setText} />
 				</div>
 				<div className="w-[50rem] h-full min-h-[60rem] bg-[#e5e7eb] border-zinc-300 border-3 rounded flex flex-col items-center justify-start p-3 gap-2 overflow-y-scroll">
