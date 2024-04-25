@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function capitalize(input: string) {
+export function capitalize(input: string, nbsp?: boolean) {
   return String(input)
     .split("-")
     .map((word) => {
@@ -20,7 +20,7 @@ export function capitalize(input: string) {
           return word.charAt(0).toUpperCase() + word.slice(1);
       }
     })
-    .join(" ")
+    .join(nbsp ? " " : " ")
 }
 
 export function titleCase(input: string) {
@@ -89,6 +89,59 @@ export function pokeTypeToTW(type: string) {
     default:
       return ""
   }
+}
+
+export const pokeTypeToHex = (type: string) => {
+  switch (String(type).toLowerCase()) {
+    case "bug":
+      return "#A8B820"
+    case "dark":
+      return "#705848"
+    case "dragon":
+      return "#7038F8"
+    case "electric":
+      return "#F8D030"
+    case "fairy":
+      return "#EE99AC"
+    case "fighting":
+      return "#C03028"
+    case "fire":
+      return "#F08030"
+    case "flying":
+      return "#A890F0"
+    case "ghost":
+      return "#705898"
+    case "grass":
+      return "#78C850"
+    case "ground":
+      return "#E0C068"
+    case "ice":
+      return "#98D8D8"
+    case "normal":
+      return "#A8A878"
+    case "poison":
+      return "#A040A0"
+    case "psychic":
+      return "#F85888"
+    case "rock":
+      return "#B8A038"
+    case "steel":
+      return "#B8B8D0"
+    case "water":
+      return "#6890F0"
+    default:
+      return ""
+  }
+}
+
+export const shadeColor = (color: string, percent: number) => {
+  const f = parseInt(color.slice(1), 16);
+  const t = percent < 0 ? 0 : 255;
+  const p = percent < 0 ? percent * -1 : percent;
+  const R = f >> 16;
+  const G = f >> 8 & 0x00FF;
+  const B = f & 0x0000FF;
+  return "#" + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
 }
 
 export const blobToBase64 = (blob: any, callback: any) => {
