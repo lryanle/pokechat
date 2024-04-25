@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Book, ChevronLeft, ChevronRight, MoveRight } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { capitalize, cn, pad, titleCase, pokeTypeToHex, shadeColor } from "@/lib/utils";
@@ -198,7 +198,8 @@ export default function page({ params }: Props) {
 								</CardHeader>
 								<CardContent className="flex justify-evenly items-center gap-1 p-4 pt-0">
 									{data.evolutionChain.map((evolution: any, index: number) => (
-										<div key={evolution+index} className="flex justify-evenly items-center gap-1">
+										// <div key={evolution+index} className="flex justify-evenly items-center gap-1">
+										<Fragment key={evolution+index}>
 											{evolution.minlevel !== 1 && (
 												<div className="flex flex-col items-center justify-center text-center text-muted-foreground">
 													<MoveRight
@@ -211,11 +212,12 @@ export default function page({ params }: Props) {
 												</div>
 											)}
 											<SmallPokemonCard
-												key={evolution.id}
+												key={evolution.name}
 												pokemon={evolution}
 												index={index}
 											/>
-										</div>
+										</Fragment>
+										// </div>
 									))}
 								</CardContent>
 							</Card>

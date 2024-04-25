@@ -135,7 +135,7 @@ export const Navbar = ({ pokemonID }: NavbarProps) => {
 				</NavigationMenuItem>
 				<NavigationMenuItem className="bg-white hover:bg-opacity-70 hover:drop-shadow rounded-md">
 					<NavigationMenuLink
-						href="https://github.com/lryanle/Pokéchat"
+						href="https://github.com/lryanle/pokechat"
 						target="_blank"
 						className={navigationMenuTriggerStyle()}
 					>
