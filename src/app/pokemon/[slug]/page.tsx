@@ -13,6 +13,7 @@ import { Icons } from "@/components/Icons";
 import { pokeTypeToTW } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ErrorBar } from "recharts";
+import Link from "next/link";
 
 type Props = {
 	params: { slug: string };
@@ -300,10 +301,12 @@ export default function page({ params }: Props) {
 								</div>
 								<div className="flex flex-col items-start justify-center gap-1">
 									<Label className="text-lg font-semibold text-primary">More Information</Label>
-									<Button variant="secondary" onClick={() => { router.push(data.pokemon.bulbapedia) }} target="_blank" className="flex justify-center items-center gap-1">
-										<Image src="/bulbapedia.png" alt="Bulbapedia" width={16} height={16} />
-										{capitalize(data.pokemon.name)} on Bulbapedia
-									</Button>
+									<Link href={data.pokemon.bulbapedia} target="_blank">
+										<Button variant="secondary" className="flex justify-center items-center gap-1">
+											<Image src="/bulbapedia.png" alt="Bulbapedia" width={16} height={16} />
+											{capitalize(data.pokemon.name)} on Bulbapedia
+										</Button>
+									</Link>
 								</div>
 							</TabsContent>
 							<TabsContent value="stats" className="h-full w-full p-2">
