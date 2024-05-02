@@ -4,15 +4,14 @@ import { Book, ChevronLeft, ChevronRight, MoveRight } from "lucide-react";
 import React, { Fragment, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
-import { capitalize, cn, pad, titleCase, pokeTypeToHex, shadeColor } from "@/lib/utils";
+import { capitalize, cn, pad, pokeTypeToHex, pokeTypeToTW, shadeColor } from "@/lib/utils";
 import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { SmallPokemonCard } from "@/components/SmallPokemonCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Icons } from "@/components/Icons";
-import { pokeTypeToTW } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ErrorBar } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import Link from "next/link";
 
 type Props = {

@@ -85,6 +85,10 @@ const config = {
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
 			},
+			delay: {
+				"400": "400ms",
+				"600": "600ms",
+			},
 			dropShadow: {
 				"pokemon-bug": "0 10px 10px #A8B820",
 				"pokemon-dark": "0 10px 10px #705848",
