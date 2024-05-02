@@ -4,7 +4,7 @@
 
 ## Demo Video
 
-* [Video Submission URL -- make sure permissions are open]
+* [Video Submission](https://youtu.be/-3fEUhRZZLU)
 
 ## Getting Started
 
