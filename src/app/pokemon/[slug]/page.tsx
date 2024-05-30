@@ -106,7 +106,7 @@ export default function page({ params }: Props) {
 											}
 											className="text-foreground text-lg flex flex-col justify-center items-end p-1 pl-0 leading-0 h-fit"
 										>
-											<Image
+											<img
 												src={data.pokemonBeforeAfter[0].image}
 												alt={data.pokemonBeforeAfter[0].name}
 												height={40}
@@ -130,7 +130,7 @@ export default function page({ params }: Props) {
 										<div className="w-20 flex justify-start items-center"></div>
 									)}
 									<div className="flex items-center justify-center group">
-										<Image
+										<img
 											src={data.pokemon.image}
 											alt={data.pokemon.name}
 											className={cn(
@@ -141,7 +141,7 @@ export default function page({ params }: Props) {
 											width={256}
 											height={256}
 										/>
-										<Image
+										<img
 											src={data.pokemon.shinyImage}
 											alt={data.pokemon.name}
 											className={cn(
@@ -163,7 +163,7 @@ export default function page({ params }: Props) {
 											}
 											className="text-foreground text-lg flex flex-col justify-center items-start p-1 pr-1 leading-0 h-fit"
 										>
-											<Image
+											<img
 												src={data.pokemonBeforeAfter[1].image}
 												alt={data.pokemonBeforeAfter[1].name}
 												height={40}

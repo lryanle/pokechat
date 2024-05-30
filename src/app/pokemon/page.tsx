@@ -125,7 +125,7 @@ export default function PokemonList({}: Props) {
 									value={type}
 								>
 									<div className={cn(`p-1.5 rounded-full`, selectedTypes.includes(type) ? `bg-pokemon-${type}` : "bg-zinc-400")}>
-										<Image
+										<img
 											src={`/icons/${type}.png`}
 											alt={type}
 											width={14}

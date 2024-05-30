@@ -48,7 +48,7 @@ export const PokemonCard = React.memo(({ pokemon, index }: Props) => {
 				</div>
 			</CardHeader>
 			<CardContent className="flex flex-col items-center justify-center gap-4 p-4">
-				<Image
+				<img
 					width={96}
 					height={96}
 					src={pokemon.sprite}

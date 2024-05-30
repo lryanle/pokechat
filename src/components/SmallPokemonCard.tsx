@@ -50,7 +50,7 @@ export const SmallPokemonCard = React.memo(({ pokemon, index }: Props) => {
 			<CardContent className="flex flex-col items-center justify-center gap-1 p-2">
 				{pokemonData.image !== "-1" ? (
 					<>
-						<Image
+						<img
 							width={80}
 							height={80}
 							src={pokemonData.image}
